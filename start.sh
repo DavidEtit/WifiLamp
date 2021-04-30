@@ -2,19 +2,19 @@
 #this script will start update and startup the Wifi-Lamp Programm
 
 #please set these variables according to your setup
-repoPath="/home/pi/Lamp/Wifilamp-Code"
-progrmPath="/home/pi/Lamp/Wifilamp-Code/Lamp.py"
-lampPath="/home/pi/Lamp"
-statePath="/home/pi/Lamp/Wifi-Lamp"
-backupPath="/home/pi/Lamp/GitBackup/Wifi-Lamp"
+repoPath="/home/pi/WifiLamp"
+progrmPath="/home/pi/WifiLamp/Lamp.py"
+gitPath="/home/pi/WifiLamp"
+statePath="/home/pi/WifiLamp"
+backupPath="/home/pi/GitBackup/.git"
 
 #update program
 if [ -d $statePath ]
 	then
 		sudo rm -r $statePath
-		echo "deleted old Wifi-Lamp repo"
-		sudo cp -r $backupPath $lampPath
-		echo "copied backup repo"
+		echo "deleted old WifiLamp .git"
+		sudo cp -r $backupPath $gitPath
+		echo "copied backup .git"
 	else
 		echo "cant finde statePath : pls check start.sh"
 fi
