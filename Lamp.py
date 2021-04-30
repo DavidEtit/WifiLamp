@@ -102,4 +102,4 @@ while(running == True):
     #command zuruecksetzen
     command = ''
 GPIO.cleanup()
-print('finish')
+print('fuck')
