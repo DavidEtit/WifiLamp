@@ -1,8 +1,5 @@
 import git
 import RPi.GPIO as GPIO
-from sys import argv
-import os
-from os import environ
 
 #festlegen der Pin-Benennung
 #GPIO.setmode(GPIO.BOARD)
@@ -12,10 +9,6 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(19,GPIO.OUT)
 GPIO.setup(26,GPIO.IN)
 
-#enviroment vars
-os.environ['GIT_ASKPASS']= "/home/pi/WifiLamp/Lamp.py"
-os.environ['GIT_USERNAME'] = "david.schwaninger@gmx.de"
-os.environ['GIT_PASSWORD'] = "Githubnuria23!"
 #refferenz-repository
 repo = git.Repo(r'/home/pi/WifiLamp')
 
