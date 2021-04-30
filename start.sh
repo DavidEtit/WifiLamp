@@ -8,10 +8,10 @@ progrmPath="/home/pi/WifiLamp/Lamp.py"
 #update update.sh
 if [ -e /home/pi/update.sh ]
 	then
-    sudo rm /home/pi/update.sh
+    		sudo rm /home/pi/update.sh
 		echo "deleted update.sh"
 		sudo cp /home/pi/WifiLamp/update.sh
-    echo "updated update.sh"
+    		echo "updated update.sh"
 	else
 		echo "update.sh is missing : pls check Wifilamp-Code repo"
 fi
