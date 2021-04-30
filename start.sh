@@ -28,7 +28,7 @@ fi
 if [ -d $repoPath ]
 	then
 		cd $repoPath
-		git pull
+		sudo git pull
 		echo "program is up to date"
 		cd
 	else

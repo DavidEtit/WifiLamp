@@ -74,7 +74,7 @@ while(running == True):
     if newState == prevOnlineState:
         continue
     else:
-        file =  open(r'/home/pi/WifiLamp/LampState.txt', 'w+')
+        file =  open(r'/home/pi/Lamp/Wifi-Lamp/LampState.txt', 'w+')
         if newState == 'an' or newState == 'aus':
                 file.write(newState)
                 file.close()
