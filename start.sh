@@ -5,7 +5,7 @@
 repoPath="/home/pi/WifiLamp"
 progrmPath="/home/pi/WifiLamp/Lamp.py"
 gitPath="/home/pi/WifiLamp"
-statePath="/home/pi/WifiLamp"
+statePath="/home/pi/WifiLamp/.git"
 backupPath="/home/pi/GitBackup/.git"
 
 #update program
