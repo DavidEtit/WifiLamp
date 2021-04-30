@@ -6,14 +6,20 @@ repoPath="/home/pi/WifiLamp"
 progrmPath="/home/pi/WifiLamp/Lamp.py"
 gitPath="/home/pi/WifiLamp"
 statePath="/home/pi/WifiLamp/.git"
-backupPath="/home/pi/GitBackup/.git"
+backupPath="/home/pi/GitBackup"
+fuckoff="/home/pi/GitBackup/WifiLamp"
+gitBackupPath="/home/pi/GitBackup/WifiLamp/.git"
 
 #update program
 if [ -d $statePath ]
 	then
+		sudo rm -r $fuckoff
+		cd $backupPath
+		sudo git clone https://github.com/DavidEtit/WifiLamp.git
+		cd
 		sudo rm -r $statePath
 		echo "deleted old WifiLamp .git"
-		sudo cp -r $backupPath $gitPath
+		sudo cp -r $gitBackupPath  $gitPath
 		echo "copied backup .git"
 	else
 		echo "cant finde statePath : pls check start.sh"
