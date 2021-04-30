@@ -10,7 +10,7 @@ GPIO.setup(19,GPIO.OUT)
 GPIO.setup(26,GPIO.IN)
 
 #refferenz-repository
-repo = git.Repo(r'/home/pi/Lamp/Wifi-Lamp')
+repo = git.Repo(r'/home/pi/WifiLamp')
 
 #initialisieren des remote
 try:
@@ -34,7 +34,7 @@ while(running == True):
         print('could not pull')
     
     #Datei oeffnen und auslesen
-    file =  open(r'/home/pi/Lamp/Wifi-Lamp/LampState.txt', 'r+')
+    file =  open(r'/home/pi/WifiLamp/LampState.txt', 'r+')
     onlineState = file.readlines()
 
     #im Falle : Dokument leer
