@@ -10,7 +10,7 @@ if [ -e /home/pi/update.sh ]
 	then
     		sudo rm /home/pi/update.sh
 		echo "deleted update.sh"
-		sudo cp /home/pi/WifiLamp/update.sh
+		sudo cp /home/pi/WifiLamp/update.sh /home/pi
     		echo "updated update.sh"
 	else
 		echo "update.sh is missing : pls check Wifilamp-Code repo"
