@@ -49,10 +49,10 @@ while(running == True):
 
     #aktualisieren der "LED"
     if 'an' in prevOnlineState:
-        GPIO.output(19,GPIO.LOW)
+        GPIO.output(19,GPIO.HIGH)
         print('set pin to HIGH')
     elif 'aus' in prevOnlineState:
-        GPIO.output(19,GPIO.HIGH)
+        GPIO.output(19,GPIO.LOW)
         print('set pin to LOW') 
     else:
         print('invalide state of prevOnlineState:' + prevOnlineState)
