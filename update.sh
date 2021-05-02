@@ -6,7 +6,7 @@ repoPath="/home/pi/WifiLamp"
 progrmPath="/home/pi/WifiLamp/start.sh"
 
 #update program
-if [ -d /home/pi/Backup/WifiLamp]
+if [ -d /home/pi/Backup/WifiLamp/ ]
 	then
 		sudo rm -r /home/pi/WifiLamp
 		echo "deleted old repo"
