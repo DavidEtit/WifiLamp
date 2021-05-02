@@ -100,15 +100,15 @@ while(running == True):
     except git.exc.GitCommandError as error:
         print('could not push')    
         file = open(r'/home/pi/WifiLamp/LampState.txt', 'w+')
-    	file.write('aus')
-    	file.close
-    	GPIO.output(19,GPIO.HIGH)
-    	time.sleep(1)
-    	GPIO.output(19,GPIO.LOW)
-    	time.sleep(1)
-    	GPIO.output(19,GPIO.HIGH)
-    	time.sleep(1)
-    	GPIO.output(19,GPIO.LOW)
+        file.write('aus')
+        file.close
+        GPIO.output(19,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(19,GPIO.LOW)
+        time.sleep(1)
+        GPIO.output(19,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(19,GPIO.LOW)
 
     #command zuruecksetzen
     command = ''
