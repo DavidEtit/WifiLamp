@@ -1,5 +1,6 @@
 import git
 import RPi.GPIO as GPIO
+import time
 
 #festlegen der Pin-Benennung
 #GPIO.setmode(GPIO.BOARD)
@@ -49,10 +50,10 @@ while(running == True):
 
     #aktualisieren der "LED"
     if 'an' in prevOnlineState:
-        GPIO.output(19,GPIO.LOW)
+        GPIO.output(19,GPIO.HIGH)
         print('set pin to HIGH')
     elif 'aus' in prevOnlineState:
-        GPIO.output(19,GPIO.HIGH)
+        GPIO.output(19,GPIO.LOW)
         print('set pin to LOW') 
     else:
         print('invalide state of prevOnlineState:' + prevOnlineState)
@@ -98,6 +99,16 @@ while(running == True):
         repo.remotes.origin.push()
     except git.exc.GitCommandError as error:
         print('could not push')    
+        file = open(r'/home/pi/WifiLamp/LampState.txt', 'w+')
+        file.write('aus')
+        file.close
+        GPIO.output(19,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(19,GPIO.LOW)
+        time.sleep(1)
+        GPIO.output(19,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(19,GPIO.LOW)
 
     #command zuruecksetzen
     command = ''
