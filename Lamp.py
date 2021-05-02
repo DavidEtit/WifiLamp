@@ -1,5 +1,6 @@
 import git
 import RPi.GPIO as GPIO
+import time
 
 #festlegen der Pin-Benennung
 #GPIO.setmode(GPIO.BOARD)
@@ -98,6 +99,16 @@ while(running == True):
         repo.remotes.origin.push()
     except git.exc.GitCommandError as error:
         print('could not push')    
+        file = open(r'/home/pi/WifiLamp/LampState.txt', 'w+')
+    	file.write('aus')
+    	file.close
+    	GPIO.output(19,GPIO.HIGH)
+    	time.sleep(1)
+    	GPIO.output(19,GPIO.LOW)
+    	time.sleep(1)
+    	GPIO.output(19,GPIO.HIGH)
+    	time.sleep(1)
+    	GPIO.output(19,GPIO.LOW)
 
     #command zuruecksetzen
     command = ''
